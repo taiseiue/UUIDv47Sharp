@@ -19,7 +19,7 @@ The mechanism works by applying an XOR mask exclusively to the timestamp portion
 You can install it into your project from [NuGet](https://www.nuget.org/packages/UUIDv47Sharp/).
 
 ```
-> dotnet add package UUIDv47Sharp --version 0.1.0
+> dotnet add package UUIDv47Sharp
 ```
 
 ## Usage

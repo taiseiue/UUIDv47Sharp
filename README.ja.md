@@ -18,7 +18,7 @@
 [NuGet](https://www.nuget.org/packages/UUIDv47Sharp/)からお使いのプロジェクトにインストールできます。
 
 ```
-> dotnet add package UUIDv47Sharp --version 0.1.0
+> dotnet add package UUIDv47Sharp
 ```
 
 ## Usage

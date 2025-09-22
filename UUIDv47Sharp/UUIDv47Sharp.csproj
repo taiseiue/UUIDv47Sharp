@@ -6,4 +6,37 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>UUIDv47Sharp</PackageId>
+    <Version>0.1.1</Version>
+    <Authors>Taisei Uemura</Authors>
+    <Description>This library converts between sortable UUIDv7 and random-looking UUIDs by encrypting their timestamps.</Description>
+    <Copyright>© 2025 Taisei Uemura. All rights reserved.</Copyright>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/taiseiue/UUIDv47Sharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/taiseiue/UUIDv47Sharp.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>uuid;guid;uuidv7;uuidv4;dotnet</PackageTags>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+
+  <PackageReleaseNotes>
+      ## Version 0.1.1 (2025-09-22)
+      - ⚠️ BreakingChanges: FromGuid method is renamed to ToUuid.
+  </PackageReleaseNotes>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/"/>
+    <None Include="../README.ja.md" Pack="true" PackagePath="/"/>
+  </ItemGroup>
+
 </Project>
