@@ -29,10 +29,12 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
 
-  <PackageReleaseNotes>
-      ## Version 0.1.1 (2025-09-22)
-      - ⚠️ BreakingChanges: FromGuid method is renamed to ToUuid.
-  </PackageReleaseNotes>
+  <PropertyGroup>
+    <PackageReleaseNotes>
+        ## Version 0.1.1 (2025-09-22)
+        - ⚠️ BreakingChanges: FromGuid method is renamed to ToUuid.
+    </PackageReleaseNotes>
+  </PropertyGroup>
 
   <ItemGroup>
     <None Include="../README.md" Pack="true" PackagePath="/"/>
