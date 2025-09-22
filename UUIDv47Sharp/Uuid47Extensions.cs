@@ -31,11 +31,11 @@ public static class Uuid47Extensions
         return new Guid(bytes);
     }
     /// <summary>
-    /// Convert from System.Guid.
+    /// Convert to UUID from System.Guid.
     /// </summary>
     /// <param name="guid">The GUID to convert.</param>
     /// <returns>The converted UUID.</returns>
-    public static Uuid FromGuid(this Guid guid)
+    public static Uuid ToUuid(this Guid guid)
     {
         Span<byte> bytes = stackalloc byte[16];
         guid.TryWriteBytes(bytes);

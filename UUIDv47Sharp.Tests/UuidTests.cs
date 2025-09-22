@@ -72,13 +72,13 @@ public class UuidTests
     }
 
     [Fact]
-    public void ToGuid_FromGuid_Roundtrip()
+    public void ToGuid_ToUuid_Roundtrip()
     {
         var bytes = new byte[16];
         new Random(321).NextBytes(bytes);
         var u = new Uuid(bytes);
         Guid g = u.ToGuid();
-        var back = g.FromGuid();
+        var back = g.ToUuid();
         Assert.Equal(u, back);
     }
 

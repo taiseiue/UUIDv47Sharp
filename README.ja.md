@@ -1,18 +1,25 @@
 # UUIDv47Sharp
+
+[English](./README.md) | **Japanese**
+
 このライブラリは、時刻情報を含みソート可能なUUIDv7と、その時刻情報を暗号化してランダムに見えるUUID(facade)とを相互に変換する機能を提供します。
 
 これにより、データベース内部では効率的なUUIDv7を使いつつ、外部APIでは生成時刻などの情報が推測できないIDを公開でき、プライバシーとパフォーマンスを両立させます。
 
 このライブラリは、[stateless-me/uuidv47](https://github.com/stateless-me/uuidv47)をC#/.NETエコシステムに移植したものです。
 
-|       |        |
-|-------|--------|
-|[English](./README.md)|Japanese|
-
 ## What's this?
 このライブラリは、UUIDv7と、UUIDv4のようなランダムな外観を持つID(facade)との間で、決定的(deterministic)かつ逆変換が可能(reversible)な変換方法を提供します。
 
 この仕組みは、UUIDv7のタイムスタンプ部分のみを対象にXORマスクを適用することで、時刻情報を隠蔽するものです。このXORマスクは、UUID自身のランダムビット部分に紐付けられた、可逆暗号であるSipHash-2-4ストリームを用いて生成されます。このアプローチにより、変換後のIDは時刻情報が秘匿されつつも、元のUUIDv7と1対1で対応するため、いつでも相互に変換することが可能です。
+
+## Installation
+
+[NuGet](https://www.nuget.org/packages/UUIDv47Sharp/)からお使いのプロジェクトにインストールできます。
+
+```
+> dotnet add package UUIDv47Sharp --version 0.1.0
+```
 
 ## Usage
 
@@ -20,19 +27,21 @@
 using UUIDv47Sharp;
 
 var key = new Key(0x0123456789abcdef, 0xfedcba9876543210);
-// Or generate a random key:
+// キーを生成することも可能
 // var key = Key.NewRandom();
 
-// Parse a UUIDv7
-// (e.g., from your database)
+// UUIDv7をパースする
+// (データベースなどから取得)
 var v7 = Uuid.Parse("018f2d9f-9a2a-7def-8c3f-7b1a2c4d5e6f");
+// .NETのGUID構造体から変換することも可能
+// var v7 = guid.ToUuid();
 
-// Encode to facade (v4-like) for external use
+// 外部APIに公開するために時系列情報を含まないUUIDを生成
 var facade = Uuid47Codec.Encode(v7, key);
 Console.WriteLine($"ExternalID: {facade}");
 // Output: External ID: 2463c780-7fca-4def-8c3f-7b1a2c4d5e6f
 
-// Decode back to original v7 for internal use
+// 時系列情報を含まないUUIDから、元のUUIDを取り出す
 var decoded = Uuid47Codec.Decode(facade, key);
 Console.WriteLine($"InternalID: {decoded}");
 // Output: Internal ID: 018f2d9f-9a2a-7def-8c3f-7b1a2c4d5e6f
@@ -61,7 +70,7 @@ Console.WriteLine($"InternalID: {decoded}");
 - GitHubの[Security Advisory](https://github.com/taiseiue/UUIDv47Sharp/security/advisories)に投稿する
 - taiseiue@wsnet.jp 宛に直接連絡する（PGP鍵は[OpenPGP](https://keys.openpgp.org/search?q=0D2E1F9F051058B2B360B34DA25AD3BFB865EC1E)から入手できます）
 
-セキュリティ脆弱性に関するIssueが作成いただいた場合、その内容は把握しますが、該当のIssueは削除します。
+セキュリティ脆弱性に関するIssueを作成いただいた場合、その内容は把握しますが、該当のIssueは削除します。
 
 ## Credits
 これは、Stateless Limited社が開発した優れたUUID生成ライブラリである[stateless-me/uuidv47](https://github.com/stateless-me/uuidv47)のC#による実装です。
