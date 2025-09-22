@@ -64,7 +64,7 @@ public readonly struct Uuid : IEquatable<Uuid>, ISpanFormattable
         => text is null ? (uuid = default, false).Item2 : TryParse(text.AsSpan(), out uuid);
 
     /// <summary>
-    /// Tries to parse a UUID from a ReadOnlySpan<char> in either hyphenated (36 chars) or compact (32 chars) format.
+    /// Tries to parse a UUID from a ReadOnlySpan&lt;char&gt; in either hyphenated (36 chars) or compact (32 chars) format.
     /// </summary>
     /// <param name="text">The input span to parse.</param>
     /// <param name="uuid">The parsed UUID.</param>
