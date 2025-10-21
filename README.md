@@ -73,9 +73,17 @@ If you discover any security vulnerabilities in this software, please **DO NOT**
 
 If an issue related to a security vulnerability is created, we will accept the report but subsequently delete the associated issue.
 
-## Credits
+## Credits & Supports
 This is a C# implementation of the highly efficient UUID generation library [stateless-me/uuidv47](https://github.com/stateless-me/uuidv47) developed by Stateless Limited.
 We also referenced the Go language implementation [n2p5/uuid47](https://github.com/n2p5/uuid47) of uuidv47 for implementation guidance.
+
+This project receives support from GMO FlattSecurity's “GMO Open Source Developer Support Program” and regularly conducts security assessments using “Takumi byGMO.”
+
+<a href="https://flatt.tech/oss/gmo/trampoline" target="_blank"><img src="https://flatt.tech/assets/images/badges/gmo-oss.svg" height="24px"/></a>
+
+I'd be grateful if you could support this project!
+
+<a href="https://www.buymeacoffee.com/taiseiue" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## License
 This software is released under the [The MIT License](./LICENSE).
