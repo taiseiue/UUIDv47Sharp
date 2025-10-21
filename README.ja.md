@@ -72,9 +72,17 @@ Console.WriteLine($"InternalID: {decoded}");
 
 セキュリティ脆弱性に関するIssueを作成いただいた場合、その内容は把握しますが、該当のIssueは削除します。
 
-## Credits
+## Credits & Supports
 これは、Stateless Limited社が開発した優れたUUID生成ライブラリである[stateless-me/uuidv47](https://github.com/stateless-me/uuidv47)のC#による実装です。
 また、uuidv47のGo言語版実装である[n2p5/uuid47](https://github.com/n2p5/uuid47)の実装を参考にしました。
+
+このプロジェクトでは、GMO FlattSecurity社の「GMO オープンソース開発者応援プログラム」の支援を受けて、「Takumi byGMO」によるセキュリティ診断を定期的に行っています。
+
+<a href="https://flatt.tech/oss/gmo/trampoline" target="_blank"><img src="https://flatt.tech/assets/images/badges/gmo-oss.svg" height="24px"/></a>
+
+このプロジェクトが良いと思ったら、ぜひ少額のご支援をお願いします。
+
+<a href="https://www.buymeacoffee.com/taiseiue" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
 
 ## License
 
