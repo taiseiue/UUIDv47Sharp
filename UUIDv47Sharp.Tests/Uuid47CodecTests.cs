@@ -89,4 +89,17 @@ public class Uuid47CodecTests
             Assert.Equal(v7, back);
         }
     }
+
+    [Fact]
+    public void EncodeDecode_WithGuidV7_Roundtrip()
+    {
+        var originalV7 = Guid.CreateVersion7();
+        var uuid = originalV7.ToUuid();
+        var key = new Key(0x0123456789ABCDEF, 0xFEDCBA9876543210);
+
+        var masked = Uuid47Codec.Encode(uuid, key);
+        var decoded = Uuid47Codec.Decode(masked, key).ToGuid();
+
+        Assert.Equal(originalV7, decoded);
+    }
 }
