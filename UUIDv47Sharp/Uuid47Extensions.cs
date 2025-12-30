@@ -28,7 +28,7 @@ public static class Uuid47Extensions
     {
         Span<byte> bytes = stackalloc byte[16];
         uuid.CopyTo(bytes);
-        return new Guid(bytes);
+        return new Guid(bytes, bigEndian: true);
     }
     /// <summary>
     /// Convert to UUID from System.Guid.
@@ -38,7 +38,7 @@ public static class Uuid47Extensions
     public static Uuid ToUuid(this Guid guid)
     {
         Span<byte> bytes = stackalloc byte[16];
-        guid.TryWriteBytes(bytes);
+        guid.TryWriteBytes(bytes, bigEndian: true, out var written);
         return new Uuid(bytes);
     }
 }
